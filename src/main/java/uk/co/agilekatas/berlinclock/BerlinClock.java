@@ -12,6 +12,6 @@ public class BerlinClock {
   }
 
   public String getTime() {
-    return null;
+    return "Y";
   }
 }
