@@ -19,7 +19,7 @@ public class BerlinClockTest {
 
       String time = berlinClock.getTime();
 
-      assertThat(secondsRow(time)).isEqualTo("Y");
+      assertThat(secondsRow(time)).isEqualTo(BerlinClock.YELLOW_LAMP);
     }
 
   }
