@@ -28,7 +28,7 @@ public class BerlinClockTest {
 
       String time = berlinClock.getTime();
 
-      assertThat(secondsRowFor(time)).isEqualTo("O");
+      assertThat(secondsRowFor(time)).isEqualTo(BerlinClock.OFF_LAMP);
     }
 
   }

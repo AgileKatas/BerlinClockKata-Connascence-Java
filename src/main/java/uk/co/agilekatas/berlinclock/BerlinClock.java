@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 public class BerlinClock {
 
+  public static final String OFF_LAMP = "O";
   public static final String YELLOW_LAMP = "Y";
 
   private final Calendar calendar;
@@ -14,7 +15,7 @@ public class BerlinClock {
 
   public String getTime() {
     if (calendar.get(Calendar.SECOND) == 59) {
-      return "O";
+      return OFF_LAMP;
     }
     return YELLOW_LAMP;
   }
