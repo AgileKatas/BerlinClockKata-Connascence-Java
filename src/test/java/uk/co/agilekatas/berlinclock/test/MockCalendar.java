@@ -1,8 +1,9 @@
 package uk.co.agilekatas.berlinclock.test;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
-public class MockCalendar extends Calendar {
+public class MockCalendar extends GregorianCalendar {
 
   private Calendar calendar;
 
@@ -13,43 +14,8 @@ public class MockCalendar extends Calendar {
   }
 
   @Override
-  protected void computeTime() {
-
-  }
-
-  @Override
-  protected void computeFields() {
-
-  }
-
-  @Override
-  public void add(int field, int amount) {
-
-  }
-
-  @Override
-  public void roll(int field, boolean up) {
-
-  }
-
-  @Override
-  public int getMinimum(int field) {
-    return 0;
-  }
-
-  @Override
-  public int getMaximum(int field) {
-    return 0;
-  }
-
-  @Override
-  public int getGreatestMinimum(int field) {
-    return 0;
-  }
-
-  @Override
-  public int getLeastMaximum(int field) {
-    return 0;
+  public int get(int field) {
+    return calendar.get(field);
   }
 
   @Override
