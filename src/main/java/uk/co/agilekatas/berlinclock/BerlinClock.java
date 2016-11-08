@@ -10,7 +10,6 @@ public class BerlinClock {
 
   public BerlinClock(Calendar calendar) {
     this.calendar = calendar;
-    System.out.println(calendar.getTime());
   }
 
   public String getTime() {

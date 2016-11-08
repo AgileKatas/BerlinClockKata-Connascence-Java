@@ -19,12 +19,12 @@ public class BerlinClockTest {
 
       String time = berlinClock.getTime();
 
-      assertThat(secondsRow(time)).isEqualTo(BerlinClock.YELLOW_LAMP);
+      assertThat(secondsRowFor(time)).isEqualTo(BerlinClock.YELLOW_LAMP);
     }
 
   }
 
-  private static String secondsRow(String time) {
+  private static String secondsRowFor(String time) {
     return time.substring(0, 1);
   }
 
