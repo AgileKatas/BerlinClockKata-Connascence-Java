@@ -22,6 +22,15 @@ public class BerlinClockTest {
       assertThat(secondsRowFor(time)).isEqualTo(BerlinClock.YELLOW_LAMP);
     }
 
+    @Test
+    public void isOffOnOddSeconds() {
+      BerlinClock berlinClock = new BerlinClock(new MockCalendar("23:59:59"));
+
+      String time = berlinClock.getTime();
+
+      assertThat(secondsRowFor(time)).isEqualTo("O");
+    }
+
   }
 
   private static String secondsRowFor(String time) {
