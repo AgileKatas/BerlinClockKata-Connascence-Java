@@ -13,6 +13,9 @@ public class BerlinClock {
   }
 
   public String getTime() {
+    if (calendar.get(Calendar.SECOND) == 59) {
+      return "O";
+    }
     return YELLOW_LAMP;
   }
 }
