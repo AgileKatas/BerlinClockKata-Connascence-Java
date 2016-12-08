@@ -15,11 +15,15 @@ public class BerlinClock {
 
   public String getTime() {
     String clock = "";
-    if (calendar.get(Calendar.SECOND) % 2 == 0) {
-      clock += YELLOW_LAMP;
-    }
-    clock += OFF_LAMP;
+    clock += getSecondsRow();
     return clock + getFiveHourRow();
+  }
+
+  private String getSecondsRow() {
+    if (calendar.get(Calendar.SECOND) % 2 == 0) {
+      return YELLOW_LAMP;
+    }
+    return OFF_LAMP;
   }
 
   private String getFiveHourRow() {
