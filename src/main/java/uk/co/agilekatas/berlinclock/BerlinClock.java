@@ -15,8 +15,8 @@ public class BerlinClock {
 
   public String getTime() {
     if (calendar.get(Calendar.SECOND) % 2 == 0) {
-      return YELLOW_LAMP;
+      return YELLOW_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
     }
-    return OFF_LAMP;
+    return OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
   }
 }
