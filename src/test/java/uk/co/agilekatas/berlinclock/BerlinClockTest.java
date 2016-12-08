@@ -15,7 +15,7 @@ public class BerlinClockTest {
 
     @Test
     public void isYellowOnEvenSeconds() {
-      BerlinClock berlinClock = new BerlinClock(new MockCalendar("00:00:00"));
+      BerlinClock berlinClock = createBerlinClockSetToTime("00:00:00");
 
       String time = berlinClock.getTime();
 
@@ -24,13 +24,17 @@ public class BerlinClockTest {
 
     @Test
     public void isOffOnOddSeconds() {
-      BerlinClock berlinClock = new BerlinClock(new MockCalendar("23:59:59"));
+      BerlinClock berlinClock = createBerlinClockSetToTime("23:59:59");
 
       String time = berlinClock.getTime();
 
       assertThat(secondsRowFor(time)).isEqualTo(BerlinClock.OFF_LAMP);
     }
 
+  }
+
+  private static BerlinClock createBerlinClockSetToTime(String time) {
+    return new BerlinClock(new MockCalendar(time));
   }
 
   private static String secondsRowFor(String time) {
