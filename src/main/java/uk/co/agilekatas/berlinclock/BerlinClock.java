@@ -14,9 +14,7 @@ public class BerlinClock {
   }
 
   public String getTime() {
-    String clock = "";
-    clock += getSecondsRow();
-    return clock + getFiveHourRow();
+    return getSecondsRow() + getFiveHourRow();
   }
 
   private String getSecondsRow() {
