@@ -22,6 +22,15 @@ public class BerlinClockTest {
       assertThat(fiveHoursRowFor(time)).isEqualTo(offLamps(4));
     }
 
+    @Test
+    public void hasOneRedLampForHoursBetweenFiveAndTen() {
+      BerlinClock berlinClock = createBerlinClockSetToTime("05:00:00");
+
+      String time = berlinClock.getTime();
+
+      assertThat(fiveHoursRowFor(time)).isEqualTo(redLamps(1) + offLamps(3));
+    }
+
   }
 
   public static class SecondsRow {
@@ -62,6 +71,14 @@ public class BerlinClockTest {
     String row = "";
     for (int i = 0; i < number; i++) {
       row += BerlinClock.OFF_LAMP;
+    }
+    return row;
+  }
+
+  private static String redLamps(int number) {
+    String row = "";
+    for (int i = 0; i < number; i++) {
+      row += BerlinClock.RED_LAMP;
     }
     return row;
   }
