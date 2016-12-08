@@ -19,6 +19,10 @@ public class BerlinClock {
       clock += YELLOW_LAMP;
     }
     clock += OFF_LAMP;
-    return clock + OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
+    return clock + getFiveHourRow();
+  }
+
+  private String getFiveHourRow() {
+    return OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
   }
 }
