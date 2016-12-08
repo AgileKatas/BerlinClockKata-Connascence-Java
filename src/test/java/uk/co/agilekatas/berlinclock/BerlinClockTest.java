@@ -11,28 +11,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(Enclosed.class)
 public class BerlinClockTest {
 
-  public static class FiveHoursRow {
-
-    @Test
-    public void hasNoRedLampsForHoursUnderFive() {
-      BerlinClock berlinClock = createBerlinClockSetToTime("00:00:00");
-
-      String time = berlinClock.getTime();
-
-      assertThat(fiveHoursRowFor(time)).isEqualTo(offLamps(4));
-    }
-
-    @Test
-    public void hasOneRedLampForHoursBetweenFiveAndTen() {
-      BerlinClock berlinClock = createBerlinClockSetToTime("05:00:00");
-
-      String time = berlinClock.getTime();
-
-      assertThat(fiveHoursRowFor(time)).isEqualTo(redLamps(1) + offLamps(3));
-    }
-
-  }
-
   public static class SecondsRow {
 
     @Test
@@ -51,6 +29,28 @@ public class BerlinClockTest {
       String time = berlinClock.getTime();
 
       assertThat(secondsRowFor(time)).isEqualTo(BerlinClock.OFF_LAMP);
+    }
+
+  }
+
+  public static class FiveHoursRow {
+
+    @Test
+    public void hasNoRedLampsForHoursUnderFive() {
+      BerlinClock berlinClock = createBerlinClockSetToTime("00:00:00");
+
+      String time = berlinClock.getTime();
+
+      assertThat(fiveHoursRowFor(time)).isEqualTo(offLamps(4));
+    }
+
+    @Test
+    public void hasOneRedLampForHoursBetweenFiveAndTen() {
+      BerlinClock berlinClock = createBerlinClockSetToTime("05:00:00");
+
+      String time = berlinClock.getTime();
+
+      assertThat(fiveHoursRowFor(time)).isEqualTo(redLamps(1) + offLamps(3));
     }
 
   }
