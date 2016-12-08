@@ -11,6 +11,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(Enclosed.class)
 public class BerlinClockTest {
 
+  public static class FiveHoursRow {
+
+    @Test
+    public void hasNoRedLampsForHoursUnderFive() {
+      BerlinClock berlinClock = createBerlinClockSetToTime("00:00:00");
+
+      String time = berlinClock.getTime();
+
+      assertThat(fiveHoursRowFor(time)).isEqualTo(offLamps(4));
+    }
+
+  }
+
   public static class SecondsRow {
 
     @Test
@@ -39,6 +52,18 @@ public class BerlinClockTest {
 
   private static String secondsRowFor(String time) {
     return time.substring(0, 1);
+  }
+
+  private static String fiveHoursRowFor(String time) {
+    return time.substring(1, 5);
+  }
+
+  private static String offLamps(int number) {
+    String row = "";
+    for (int i = 0; i < number; i++) {
+      row += BerlinClock.OFF_LAMP;
+    }
+    return row;
   }
 
 }
