@@ -14,9 +14,11 @@ public class BerlinClock {
   }
 
   public String getTime() {
+    String clock = "";
     if (calendar.get(Calendar.SECOND) % 2 == 0) {
-      return YELLOW_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
+      clock += YELLOW_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
     }
-    return OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
+    clock += OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
+    return clock;
   }
 }
