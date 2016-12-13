@@ -26,9 +26,12 @@ public class BerlinClock {
   }
 
   private String getFiveHourRow() {
+    String row = "";
     if (calendar.get(Calendar.HOUR_OF_DAY) > 4) {
-      return RED_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
+      row += RED_LAMP;
+    } else {
+      row += OFF_LAMP;
     }
-    return OFF_LAMP + OFF_LAMP + OFF_LAMP + OFF_LAMP;
+    return row + OFF_LAMP + OFF_LAMP + OFF_LAMP;
   }
 }
