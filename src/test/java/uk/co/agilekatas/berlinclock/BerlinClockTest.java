@@ -62,6 +62,24 @@ public class BerlinClockTest {
       assertThat(fiveHoursRowFor(time)).isEqualTo(redLamps(2) + offLamps(2));
     }
 
+    @Test
+    public void hasThreeRedLampsForHoursBetweenFifteenAndTwenty() {
+      BerlinClock berlinClock = createBerlinClockSetToTime("15:00:00");
+
+      String time = berlinClock.getTime();
+
+      assertThat(fiveHoursRowFor(time)).isEqualTo(redLamps(3) + offLamps(1));
+    }
+
+    @Test
+    public void hasFourRedLampsForHoursBetweenTwentyAndTwentyFour() {
+      BerlinClock berlinClock = createBerlinClockSetToTime("20:00:00");
+
+      String time = berlinClock.getTime();
+
+      assertThat(fiveHoursRowFor(time)).isEqualTo(redLamps(4));
+    }
+
   }
 
   private static BerlinClock createBerlinClockSetToTime(String time) {
