@@ -27,14 +27,15 @@ public class BerlinClock {
 
   private String getFiveHourRow() {
     String row = "";
-    if (calendar.get(Calendar.HOUR_OF_DAY) > 9) {
-      row += RED_LAMP;
+    int hour = calendar.get(Calendar.HOUR_OF_DAY);
+    for (int i = 0; i < 4; i++) {
+      if (hour > 4) {
+        row += RED_LAMP;
+        hour -= 5;
+      } else {
+        row += OFF_LAMP;
+      }
     }
-    if (calendar.get(Calendar.HOUR_OF_DAY) > 4) {
-      row += RED_LAMP;
-    } else {
-      row += OFF_LAMP;
-    }
-    return row + OFF_LAMP + OFF_LAMP + OFF_LAMP;
+    return row;
   }
 }
