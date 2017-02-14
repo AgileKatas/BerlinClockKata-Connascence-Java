@@ -53,6 +53,15 @@ public class BerlinClockTest {
       assertThat(fiveHoursRowFor(time)).isEqualTo(redLamps(1) + offLamps(3));
     }
 
+    @Test
+    public void hasTwoRedLampsForHoursBetweenTenAndFifteen() {
+      BerlinClock berlinClock = createBerlinClockSetToTime("10:00:00");
+
+      String time = berlinClock.getTime();
+
+      assertThat(fiveHoursRowFor(time)).isEqualTo(redLamps(2) + offLamps(2));
+    }
+
   }
 
   private static BerlinClock createBerlinClockSetToTime(String time) {
